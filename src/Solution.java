@@ -2,14 +2,66 @@ public class Solution {
     public static ListNode head = null;
 
     public static void main(String[] args) {
+        // Test case 1
+        System.out.println("Test case 1");
+        insertNode(1);
+        insertNode(2);
+        insertNode(3);
+        insertNode(4);
+        insertNode(5);
+        head = rotateRight(head, 2);
+        printList(head);
+
+        // Test case 2
+        System.out.println("Test case 2");
         insertNode(0);
         insertNode(1);
         insertNode(2);
-//        insertNode(4);
-//        insertNode(5);
-
-        printList(head);
         head = rotateRight(head, 4);
+        printList(head);
+
+        // Test case 3
+        System.out.println("Test case 3");
+        insertNode(1);
+        head = rotateRight(head, 99);
+        printList(head);
+
+        // Test case 4
+        System.out.println("Test case 4");
+        insertNode(1);
+        insertNode(2);
+        insertNode(3);
+        insertNode(4);
+        insertNode(5);
+        head = rotateRight(head, 0);
+        printList(head);
+
+        // Test case 5
+        System.out.println("Test case 5");
+        insertNode(10);
+        insertNode(20);
+        insertNode(30);
+        insertNode(40);
+        insertNode(50);
+        head = rotateRight(head, 5);
+        printList(head);
+
+        // Test case 6
+        System.out.println("Test case 6");
+        head = rotateRight(head, 3);
+
+        // Test case 7
+        System.out.println("Test case 7");
+        insertNode(1);
+        insertNode(2);
+        insertNode(2);
+        insertNode(2);
+        insertNode(3);
+        insertNode(4);
+        insertNode(5);
+        insertNode(5);
+        insertNode(6);
+        head = rotateRight(head, 3);
         printList(head);
 
     }
@@ -31,7 +83,13 @@ public class Solution {
             System.out.print(node.val + " ");
             node = node.next;
         }
-        System.out.println();
+
+        if (head != null && head.val == 0) {
+            System.out.println("null");
+        } else {
+            head = null;
+            System.out.println();
+        }
     }
 
     public static ListNode rotateRight(ListNode head, int k) {
